@@ -227,7 +227,7 @@ void APP_ZIGBEE_UpdateTemperature(float temperature_celsius)
 ```
 
 #### Odeslání Toggle příkazu
-Stisk hlavního tlačítka (namapovaného na `BSP` vrstvu) vyvolá funkci `APP_BSP_Button1Action()`. Tato funkce nejprve ověří, zda je zařízení úspěšně připojeno do Zigbee sítě. Pokud ano, sestaví adresní strukturu pro Koordinátora (krátká adresa `0x0000`) a odešle standardní ZCL příkaz `Toggle` na Endpoint 1. Tímto způsobem router vzdáleně ovládá stav (On/Off) na cílovém zařízení.
+Stisk hlavního tlačítka vyvolá funkci `APP_BSP_Button1Action()`. Tato funkce nejprve ověří, zda je zařízení úspěšně připojeno do Zigbee sítě. Pokud ano, sestaví adresní strukturu pro Koordinátora (krátká adresa `0x0000`) a odešle standardní ZCL příkaz `Toggle` na Endpoint 1. Tímto způsobem router vzdáleně ovládá stav (On/Off) na cílovém zařízení.
 
 ```c
 void APP_BSP_Button1Action(void)
