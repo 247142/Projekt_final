@@ -47,4 +47,4 @@ Aplikační logika a konfigurace Zigbee stacku je rozdělena do dvou samostatný
 Pro detailní popis implementace kódu a funkcí přejděte na dokumentaci jednotlivých uzlů:
 
 * 🔗 **[Readme Coord (Koordinátor)](Zigbee_test/Readme_coord.md)** – *Obsahuje logiku inicializace sítě, obsluhu E-Paper displeje a zpracování příchozích zpráv.*
-* 🔗 **[Readme Router (Senzor)](TestV1/Readme_router.md)** – *Obsahuje vyčítání senzoru BMP180, detekci stavu tlačítka a odesílání dat do sítě.*
+* 🔗 **[Readme Router (Senzor)](TestV1/README_router.md)** – *Obsahuje vyčítání senzoru BMP180, detekci stavu tlačítka a odesílání dat do sítě.*
