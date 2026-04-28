@@ -16,7 +16,7 @@ Tato složka obsahuje firmware pro vývojovou desku **Nucleo-WBA55CG**. Zaříze
 Pro správný běh Zigbee stacku a periférií je projekt v CubeMX nastaven následovně:
 
 ### 1. Základní periferie
-* **TIM2:** Nastaven jako zdroj přerušení s periodou 2 sekundy. Slouží pro pravidelné vyčítání teploty ze senzoru bez blokování hlavní smyčky.
+* **TIM2:** Nastaven jako zdroj přerušení s periodou 0,5 sekundy. Slouží pro pravidelné vyčítání teploty ze senzoru bez blokování hlavní smyčky.
 * **I2C3:** Slouží ke komunikaci se senzorem BMP180. Rychlost je ponechána na Standard Mode (100 kHz). Fyzická adresa senzoru je `0x77` (v kódu posunuta o 1 bit na `0xEE`).
 * **USART1:** Použit pro výpis ladících informací (Log) rychlostí 115200 bd.
     * **Kritické nastavení (DMA):** Aby logování přes UART nenarušovalo přesné časování rádiového stacku, je nutné v záložce *DMA Settings* u USART1 přidat **USART1_TX kanál (GPDMA1)**. Bez tohoto nastavení by systém při pokusu o první logový výpis spadl do `HardFault`. Zároveň je nutné mít zapnuté příslušné globální přerušení v NVIC.
@@ -24,7 +24,7 @@ Pro správný běh Zigbee stacku a periférií je projekt v CubeMX nastaven nás
 ### 2. Middleware: STM32_WPAN (Zigbee)
 Konfigurace rádiového stacku se nachází v sekci *Middleware and Software Packs* -> *STM32_WPAN*:
 * Role nastavena na **Router**.
-* **Endpoint Vypínač:** Obsahuje `OnOff Client` cluster. Deska zařízení sama nestavuje, pouze posílá `Toggle` příkazy na adresu `0x0000` (Coordinator).
+* **Endpoint Vypínač:** Obsahuje `OnOff Client` cluster. Deska zařízení sama nenastavuje, pouze posílá `Toggle` příkazy na adresu `0x0000` (Coordinator).
 * **Endpoint Teplota:** Obsahuje `Temperature Measurement Server` cluster. Zde lokálně zapisujeme naměřenou hodnotu ve formátu ZCL (stupně Celsia * 100).
 * **Endpoint Dveřní kontakt:** Obsahuje `IAS Zone Server` cluster. Zde logujeme stavy Alarm (otevřeno) a Clear (zavřeno).
 
@@ -50,7 +50,7 @@ Rádiový stack WBA55 alokuje buffery dynamicky (`malloc`). Vzhledem k použitý
 * **TIM2 global interrupt:** `Enabled` (Zaškrtnuto). Toto je nezbytné, aby časovač po dosažení hodnoty 499 skutečně zavolal přerušení v kódu.
 
 ### I2C3 (Komunikace se senzorem BMP180)
-Sběrnice I2C je využívána pro čtení kalibračních dat a naměřené teploty ze senzoru BMP180. Vzhledem k požadavkům senzoru je nastavena na standardní, velmi spolehlivou rychlost.
+Sběrnice I2C je využívána pro čtení kalibračních dat a naměřené teploty ze senzoru BMP180. Vzhledem k požadavkům senzoru je nastavena na standardní rychlost.
 
 **Konfigurace v záložce Parameter Settings:**
 * **I2C Speed Mode:** Standard Mode
@@ -75,7 +75,7 @@ Tyto piny slouží pro základní vizuální signalizaci stavu sítě a pro uži
 
 **Konfigurace tlačítek (Vstupy s přerušením):**
 Tlačítka slouží k manuálnímu odesílání `Toggle` příkazu pro Endpoint 1 a k simulaci magnetického senzoru pro Endpoint 3. Abychom zachytili stisk okamžitě a nemuseli stav pinů neustále vyčítat v hlavní smyčce, využíváme hardwarové přerušení (EXTI).
-* Namapovány na piny **PB6 (USER_BUTTON)** a **PC13 (USER_BUTTON)**.
+* Namapovány na piny **PB6 (USER_BUTTON_2)** a **PC13 (USER_BUTTON)**.
 * **GPIO mode:** External Interrupt Mode (spouští přerušení při změně stavu pinu).
 * **GPIO Pull-up/Pull-down:** Pull-up (Zajišťuje definovanou logickou "1", pokud tlačítko není fyzicky stisknuto).
 
@@ -106,7 +106,7 @@ Tento endpoint slouží k manuálnímu odesílání příkazu Toggle.
 * **Device ID:** `OnOff switch`
 * **Clusters:**
   * `Basic:` Server/Client
-  * `On/Off:` **Client** (Protože my jsme ovladač a příkazy odesíláme/generujeme, nevlastníme reálné relé).
+  * `On/Off:` **Client** (Protože my jsme ovladač a příkazy odesíláme/generujeme).
 
 **Záložka ENDPOINT 2 (Teplotní senzor):**
 Slouží k publikování naměřených dat z I2C sběrnice.
@@ -295,7 +295,7 @@ void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
 #### Časovač a signalizace stavu sítě (TIM2)
 Časovač TIM2 je nastaven tak, aby vyvolal přerušení každé 2 vteřiny. V jeho obslužné rutině (`HAL_TIM_PeriodElapsedCallback`) řešíme dvě věci:
 1. **Signalizace párování:** Pokud deska ještě není připojena do Zigbee sítě, bliká modrá LED dioda. Po úspěšném připojení se LED zhasne.
-2. **Plánování měření (Vlajka):** Inkrementuje se lokální čítač `cnt`. Jakmile přesáhne hodnotu 10 (což odpovídá zhruba 20 vteřinám), zvedne se vlajka `send_temp_flag = 1`, která řekne hlavní smyčce, že je čas změřit teplotu. Úmyslně nečteme I2C sběrnici přímo uvnitř přerušení, abychom neblokovali procesor a nenarušili kritické časování rádiového stacku.
+2. **Plánování měření (Vlajka):** Inkrementuje se lokální čítač `cnt`. Jakmile přesáhne hodnotu 10 (což odpovídá zhruba 5 vteřinám), zvedne se vlajka `send_temp_flag = 1`, která řekne hlavní smyčce, že je čas změřit teplotu. Úmyslně nečteme I2C sběrnici přímo uvnitř přerušení, abychom neblokovali procesor a nenarušili kritické časování rádiového stacku.
 
 ```c
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
