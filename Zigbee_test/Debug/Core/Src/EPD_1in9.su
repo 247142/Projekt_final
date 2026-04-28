@@ -1,0 +1,14 @@
+../Core/Src/EPD_1in9.c:26:6:EPD_1in9_Reset	8	static
+../Core/Src/EPD_1in9.c:41:6:EPD_1in9_SendCommand	16	static
+../Core/Src/EPD_1in9.c:51:6:EPD_1in9_SendData	16	static
+../Core/Src/EPD_1in9.c:61:7:EPD_1in9_readCommand	16	static
+../Core/Src/EPD_1in9.c:73:7:EPD_1in9_readData	16	static
+../Core/Src/EPD_1in9.c:84:6:EPD_1in9_ReadBusy	8	static
+../Core/Src/EPD_1in9.c:101:6:EPD_1in9_lut_DU_WB	8	static
+../Core/Src/EPD_1in9.c:116:6:EPD_1in9_lut_GC	8	static
+../Core/Src/EPD_1in9.c:131:6:EPD_1in9_lut_5S	8	static
+../Core/Src/EPD_1in9.c:147:6:EPD_1in9_Temperature	8	static
+../Core/Src/EPD_1in9.c:182:6:EPD_1in9_init	8	static
+../Core/Src/EPD_1in9.c:197:6:EPD_1in9_Write_Screen	24	static
+../Core/Src/EPD_1in9.c:221:6:EPD_1in9_Write_Screen1	24	static
+../Core/Src/EPD_1in9.c:245:6:EPD_1in9_sleep	8	static

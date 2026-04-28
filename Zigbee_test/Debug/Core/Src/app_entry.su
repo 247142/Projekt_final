@@ -1,0 +1,14 @@
+../Drivers/STM32WBAxx_HAL_Driver/Inc/stm32wbaxx_ll_rcc.h:3149:22:LL_RCC_ClearResetFlags	4	static
+../Core/Src/app_entry.c:124:6:MX_APPE_Config	8	static
+../Core/Src/app_entry.c:133:6:MX_APPE_LinkLayerInit	8	static
+../Core/Src/app_entry.c:143:10:MX_APPE_Init	16	static
+../Core/Src/app_entry.c:177:6:MX_APPE_Process	8	static
+../Core/Src/app_entry.c:202:13:Config_HSE	16	static
+../Core/Src/app_entry.c:221:13:System_Init	8	static
+../Core/Src/app_entry.c:274:13:SystemPower_Config	8	static
+../Core/Src/app_entry.c:345:13:APPE_RNG_Init	8	static
+../Core/Src/app_entry.c:365:6:UTIL_SEQ_Idle	4	static
+../Core/Src/app_entry.c:380:6:UTIL_SEQ_PreIdle	4	static
+../Core/Src/app_entry.c:423:6:UTIL_SEQ_PostIdle	4	static
+../Core/Src/app_entry.c:441:6:HWCB_RNG_Process	8	static
+../Core/Src/app_entry.c:516:13:__aeabi_assert	24	static

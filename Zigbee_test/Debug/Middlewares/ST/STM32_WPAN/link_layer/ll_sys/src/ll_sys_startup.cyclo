@@ -1,0 +1,3 @@
+../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_startup.c:71:6:ll_sys_mac_cntrl_init	1
+../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_startup.c:84:6:ll_sys_thread_init	1
+../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_startup.c:96:13:ll_sys_dependencies_init	2

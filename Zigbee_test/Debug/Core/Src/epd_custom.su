@@ -1,0 +1,6 @@
+../Core/Src/epd_custom.c:30:6:EPD_Custom_Init	8	static
+../Core/Src/epd_custom.c:36:6:EPD_Custom_Clear	8	static
+../Core/Src/epd_custom.c:40:6:EPD_Custom_Update	8	static
+../Core/Src/epd_custom.c:47:13:EPD_Custom_WriteDigit	16	static
+../Core/Src/epd_custom.c:53:6:EPD_Zobraz_Aplikaci	24	static
+../Core/Src/epd_custom.c:98:6:EPD_Custom_Show_Boot_Screen	8	static

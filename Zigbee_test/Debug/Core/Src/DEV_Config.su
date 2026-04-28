@@ -1,0 +1,4 @@
+../Core/Src/DEV_Config.c:36:6:DEV_I2C_WriteByte	24	static
+../Core/Src/DEV_Config.c:42:7:DEV_I2C_ReadByte	32	static
+../Core/Src/DEV_Config.c:49:5:DEV_Module_Init	8	static
+../Core/Src/DEV_Config.c:55:6:DEV_Module_Exit	8	static

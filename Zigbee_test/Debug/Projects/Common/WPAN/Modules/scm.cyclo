@@ -1,0 +1,2 @@
+../Projects/Common/WPAN/Modules/scm.c:1140:13:scm_pllrdy_isr	1
+../Projects/Common/WPAN/Modules/scm.c:1141:13:scm_hserdy_isr	1
