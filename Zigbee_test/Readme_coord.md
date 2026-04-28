@@ -14,7 +14,7 @@ Základem koordinátoru je vývojová deska **Nucleo-WBA55CG**.
 * **PB11 (LED):** Modrá LED dioda ovládaná vzdáleně z routeru.
 
 *( snímek z CubeMX)*
-![CubeMX Pinout - Koordinátor](readme_files/)
+![CubeMX Pinout - Koordinátor](readme_files/coordpinout.png)
 
 ---
 
