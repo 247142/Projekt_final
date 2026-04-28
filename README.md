@@ -1,5 +1,7 @@
 # 🛡️ Zigbee Smart Monitor: Dveřní senzor a teploměr
-
+## 👥 Autoři
+* **Bc. Oldřich Hána (247113)** – *Kordinátor*
+* **Bc. Matěj Matoušek(247142)** – *Konfigurace HW periferií a senzorů*
 *Tento školní projekt byl vytvořen v rámci předmětu **MPC-SSY**.*
 
 Projekt demonstruje komplexní komunikaci v bezdrátové síti **Zigbee 3.0** mezi dvěma uzly. Zaměřuje se na implementaci zabezpečeného clusteru **IAS Zone** (bezpečnostní dveřní senzor simulovaný tlačítkem), **Temperature Measurement** (měření teploty) a obousměrné ovládání stavu přes **OnOff** cluster (Toggle).
