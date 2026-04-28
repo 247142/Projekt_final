@@ -118,3 +118,23 @@ Využívá zabezpečovací IAS Zone cluster pro odesílání stavu otevřeno/zav
 * **Clusters:**
   * `Basic:` Server
   * `IAS Zone:` **Server**. Má zaškrtnutý parametr `callback server mode_change`, který do kódu vygeneruje záchytnou funkci pro obsluhu testovacího režimu alarmu.
+ 
+### USART1 a GPDMA1 (Ladící výpisy - Logování)
+Sériová linka USART1 (115200 bd) je využívána pro výpis ladících informací (Logů) z aplikace a ze samotného Zigbee stacku. 
+
+**Kritická závislost na DMA:**
+Rádiový stack `STM32_WPAN` v této architektuře vnitřně počítá s tím, že logování přes UART probíhá asynchronně pomocí DMA (Direct Memory Access). Pokud by se k odesílání logů použil standardní blokovací režim, procesor by se zdržel čekáním na odeslání znaků, zmeškal by kritické rádiové události a systém by okamžitě spadl do stavu `HardFault`. 
+
+Proto je nezbytné nastavit **GPDMA1** následovně:
+
+**Konfigurace GPDMA1 (Záložky All Channels a CH0 / CH1):**
+* **Channel 0:** `Standard Request Mode`
+  * **Request:** `USART1_TX`
+  * **Direction:** `Memory To Peripheral` (Přenos dat z RAM paměti ven na UART)
+  * **Priority:** `Low`
+  * **Source Address Increment:** `Enabled` (Aby DMA postupně četlo celý textový řetězec)
+* **Channel 1:** `Standard Request Mode`
+  * **Request:** `USART1_RX`
+  * **Direction:** `Peripheral To Memory`
+  * **Priority:** `Low`
+  * **Source Address Increment:** `Disabled`
