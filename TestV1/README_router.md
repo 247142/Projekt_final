@@ -1,12 +1,17 @@
 # Zigbee Router: Multi-Sensor Node (TestV1)
 
+*Tento projekt byl vytvořen v rámci předmětu **MPC-SSY**.*
+
+## 👥 Autor
+* **Bc. Matěj Matoušek (247142)** – *Router*
+
 Tato složka obsahuje firmware pro vývojovou desku **Nucleo-WBA55CG**. Zařízení v Zigbee síti funguje v roli **Routeru** a sdružuje tři logické funkce:
 1. **Chytrý vypínač** (Toggle funkce - odesílání příkazů pro On/Off zařízení).
 2. **Teplotní senzor** (Čtení reálné teploty z I2C senzoru BMP180).
 3. **Senzor dveří/oken** (Kontakt simulovaný tlačítkem využívající IAS Zone cluster).
 
 ## 🛠️ Stručná konfigurace v STM32CubeMX
-
+![CubeMX Pinout - Router](../readme_files/routerpinout.png)
 Pro správný běh Zigbee stacku a periférií je projekt v CubeMX nastaven následovně:
 
 ### 1. Základní periferie
