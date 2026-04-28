@@ -23,7 +23,7 @@ Projekt demonstruje komplexní komunikaci v bezdrátové síti **Zigbee 3.0** me
 * **IAS Zone Client (EP 1):** Spravuje registraci senzorů a přijímá poplachy o otevření/zavření dveří.
 * **Temperature Client (EP 1):** Přijímá reporty o teplotě ze senzoru.
 * **OnOff Server (EP 1):** Umožňuje vzdálené ovládání palubní LED.
-* **UI:** Grafické zobrazení stavu na E-Paper displeji a textový Dashboard přes UART.
+* **UI:** Grafické zobrazení stavu na E-Paper displeji a textový dashboard přes UART.
 
 ### Router 
 * **IAS Zone Server (EP 3):** Detekuje stav tlačítka. 
@@ -40,19 +40,19 @@ Projekt demonstruje komplexní komunikaci v bezdrátové síti **Zigbee 3.0** me
 
 
 
+## 🧩 Softwarové řešení (Architektura)
 
+Popis jednotlivých souftwarových řešní.
 
+### 🧠 Koordinátor
+Koordinátor po spuštění formuje Zigbee síť a naslouchá novým zařízením. 
+* **Registrace IAS senzoru:** Jakmile se připojí Router, Koordinátor automaticky zapíše svou IEEE adresu do atributu `IasCieAddress` senzoru na Endpointu 3. Následně zachytí `Zone Enroll Request` a schválí jej, čímž vznikne zabezpečená vazba.
+* **Zpracování poplachů:** Při změně stavu zachytí `Zone Status Change Notification`, vyhodnotí nultý bit (Alarm 1) a vztyčí vlajku pro překreslení uživatelského rozhraní.
+* **E-Paper displej:** V hlavní smyčce se na základě zachycených událostí překresluje E-Paper displej. Zobrazuje aktuální teplotu a grafický symbol dveří (otevřeno/zavřeno).
+* **Reporting teploty:** Koordinátor zasílá do Routeru žádost o konfiguraci reportingu (`ZbZclAttrReportConfigReq`), čímž definuje minimální a maximální interval zasílání hodnot.
 
-**Readme Coord**
-
-
-
-
-
-
-
-
-
-
-
-**Readme Router**
+### 🧠 Router
+Router po spuštění vyhledá síť na určeném kanálu a připojí se do ní.
+* **Měření teploty (BMP180):** Zařízení pravidelně komunikuje přes I2C s čidlem BMP180. Naměřenou teplotu přepočítává do 16bitového formátu specifikovaného standardem ZCL (hodnota ve stupních Celsia vynásobená 100) a ukládá ji do lokálního atributu na Endpointu 2. O odesílání se stará nastavený reporting stacku.
+* **Dveřní senzor (IAS Zone):** Stav externího tlačítka je mapován na atribut `ZoneStatus`. Při stisku/uvolnění se změní nultý bit atributu, což ihned vyvolá odeslání notifikace do Koordinátora.
+* **Ovládání LED (OnOff):** Další tlačítko na desce je nastaveno na Endpoint 1. Při jeho stisku se sestaví zpráva typu `Toggle` a přes `ZbZclOnOffClientToggleReq` je odeslána Koordinátorovi, kterému tímto přepne stav interní LED diody.
