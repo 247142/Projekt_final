@@ -39,12 +39,12 @@ Projekt demonstruje komplexní komunikaci v bezdrátové síti **Zigbee 3.0** me
 
 
 
-
+Zigbee_test/Readme_coord.md
 ## 🧩 Softwarové řešení (Architektura)
 
 Aplikační logika a konfigurace Zigbee stacku je rozdělena do dvou samostatných částí. Systém využívá událostmi řízenou architekturu (callbacks) a specifický *Enrollment proces* (zápis CIE adresy a schválení požadavku) pro spolehlivou komunikaci IAS senzoru.
 
 Pro detailní popis implementace kódu a funkcí přejděte na dokumentaci jednotlivých uzlů:
 
-* 🔗 **[Readme Coord (Koordinátor)](Projekt_final/Zigbee_test/Readme_coord.md)** – *Obsahuje logiku inicializace sítě, obsluhu E-Paper displeje a zpracování příchozích zpráv.*
-* 🔗 **[Readme Router (Senzor)](Projekt_final/TestV1/Readme_router.md)** – *Obsahuje vyčítání senzoru BMP180, detekci stavu tlačítka a odesílání dat do sítě.*
+* 🔗 **[Readme Coord (Koordinátor)](Zigbee_test/Readme_coord.md)** – *Obsahuje logiku inicializace sítě, obsluhu E-Paper displeje a zpracování příchozích zpráv.*
+* 🔗 **[Readme Router (Senzor)](TestV1/Readme_router.md)** – *Obsahuje vyčítání senzoru BMP180, detekci stavu tlačítka a odesílání dat do sítě.*
