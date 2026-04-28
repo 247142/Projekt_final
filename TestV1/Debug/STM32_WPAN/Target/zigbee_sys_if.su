@@ -1,0 +1,7 @@
+../STM32_WPAN/Target/zigbee_sys_if.c:56:6:ZigbeeSys_Process	8	static
+../STM32_WPAN/Target/zigbee_sys_if.c:66:6:ZigbeeSys_Init	8	static
+../STM32_WPAN/Target/zigbee_sys_if.c:80:6:ZigbeeSys_Resume	8	static
+../STM32_WPAN/Target/zigbee_sys_if.c:90:6:ZigbeeSys_SemaphoreSet	8	static
+../STM32_WPAN/Target/zigbee_sys_if.c:100:6:ZigbeeSys_SemaphoreWait	4	static
+../STM32_WPAN/Target/zigbee_sys_if.c:110:6:ZigbeeSys_EventSet	4	static
+../STM32_WPAN/Target/zigbee_sys_if.c:120:6:ZigbeeSys_EventWait	4	static

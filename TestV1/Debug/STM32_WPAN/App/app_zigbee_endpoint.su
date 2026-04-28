@@ -1,0 +1,11 @@
+../STM32_WPAN/App/app_zigbee_endpoint.c:135:6:APP_ZIGBEE_ApplicationInit	8	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:160:6:APP_ZIGBEE_ApplicationStart	4	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:177:6:APP_ZIGBEE_ConfigEndpoints	56	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:260:6:APP_ZIGBEE_ConfigGroupAddr	4	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:272:6:APP_ZIGBEE_GetStartupConfig	24	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:305:6:APP_ZIGBEE_SetNewDevice	48	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:319:6:APP_ZIGBEE_PrintApplicationInfo	16	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:347:28:APP_ZIGBEE_IasZoneServerModeChangeCallback_3	32	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:358:6:APP_ZIGBEE_UpdateDoorState	32	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:391:6:APP_ZIGBEE_UpdateTemperature	32	static
+../STM32_WPAN/App/app_zigbee_endpoint.c:408:6:APP_BSP_Button1Action	40	static
