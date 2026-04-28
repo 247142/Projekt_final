@@ -1,0 +1,270 @@
+
+[SYSTEM] Startuji displej...
+[SYSTEM] Boot screen zobrazen (00.0 C + Baterie).
+[4/4] RADIO: Startuji Zigbee sit na kanale 13...
+[ZIGBEE] Zapisuji moji adresu (0xlx) kolegovi na EP 3...
+[ZIGBEE] Konfiguruji reporting pro 0x6AAD...
+
+========== ZIGBEE CLUSTER DASHBOARD ==========
+[SIT] Kolega: 0x6AAD (Online)
+[IAS] Cluster: Alokovan (Client)
+[IAS] Posledni stav dveri: ZAVRENO
+[TMP] Cluster: Alokovan (Client)
+[TMP] Posledni hodnota: 0.0 C
+[LED] Cluster: Alokovan (Server)
+[LED] Stav v databazi: VYPNUTO
+==============================================
+
+[DEBUG] Senzor potvrdil prijeti CIE adresy! Ted by mel poslat Enroll Request...
+[ZIGBEE] IAS Zone Enroll Request od 0xlx. Schvaluji...
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[ZIGBEE] PRIJAT PRIKAZ: TOGGLE
+
+[ZIGBEE] PRIJAT PRIKAZ: TOGGLE
+
+[ZIGBEE] PRIJAT PRIKAZ: TOGGLE
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[ZIGBEE] ClusterIAS přijat
+[ZIGBEE] POZOR: Dvere OTEVRENY! (Status: 0x0001)
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[ZIGBEE] ClusterIAS přijat
+[ZIGBEE] KLID: Dvere ZAVRENY. (Status: 0x0000)
+[EPD] Data od 0x6AAD vykreslena.
+
+[ZIGBEE] ClusterIAS přijat
+[ZIGBEE] POZOR: Dvere OTEVRENY! (Status: 0x0001)
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.8 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 24.9 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.0 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.2 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.2 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.1 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.2 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.2 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.3 C
+[EPD] Data od 0x6AAD vykreslena.
+
+[REPORT] Nova teplota: 25.2 C
+[
+EPD] Data od 0x6AAD vykreslena.
+
+[SYSTEM] Startuji displej...
+[SYSTEM] Boot screen zobrazen (00.0 C + Baterie).
+[4/4] RADIO: Startuji Zigbee sit na kanale 13...
+[ZIGBEE] Zapisuji moji adresu (0xlx) kolegovi na EP 3...
+[ZIGBEE] Konfiguruji reporting pro 0xFECF...
+
+========== ZIGBEE CLUSTER DASHBOARD ==========
+[SIT] Kolega: 0xFECF (Online)
+[IAS] Cluster: Alokovan (Client)
+[IAS] Posledni stav dveri: ZAVRENO
+[TMP] Cluster: Alokovan (Client)
+[TMP] Posledni hodnota: 0.0 C
+[LED] Cluster: Alokovan (Server)
+[LED] Stav v databazi: VYPNUTO
+==============================================
+
+[DEBUG] Senzor potvrdil prijeti CIE adresy! Ted by mel poslat Enroll Request...
+[ZIGBEE] IAS Zone Enroll Request od 0xlx. Schvaluji...
+
+[REPORT] Nova teplota: 25.3 C
+[EPD] Data od 0xFECF vykreslena.
+
+[REPORT] Nova teplota: 28.5 C
+
+[ZIGBEE] PRIJAT PRIKAZ: TOGGLE
+[EPD] Data od 0xFECF vykreslena.
+
+[REPORT] Nova teplota: 28.3 C
+
+[ZIGBEE] ClusterIAS přijat
+[ZIGBEE] POZOR: Dvere OTEVRENY! (Status: 0x0001)
+[EPD] Data od 0xFECF vykreslena.
+
+[REPORT] Nova teplota: 26.9 C
+[EPD] Data od 0xFECF vykreslena.
+
+[REPORT] Nova teplota: 25.9 C
+[EPD] Data od 0xFECF vykreslena.
+
+[ZIGBEE] ClusterIAS přijat
+[ZIGBEE] POZOR: Dvere OTEVRENY! (Status: 0x0001)
+[EPD] Data od 0xFECF vykreslena.
+
+[ZIGBEE] ClusterIAS přijat
+[ZIGBEE] KLID: Dvere ZAVRENY. (Status: 0x0000)
+[EPD] Data od 0xFECF vykreslena.
+
+[REPORT] Nova teplota: 25.9 C
+
+[ZIGBEE] ClusterIAS přijat
+[ZIGBEE] POZOR: Dvere OTEVRENY! (Status: 0x0001)
+[

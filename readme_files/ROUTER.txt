@@ -1,0 +1,539 @@
+ZIGBEE Application Init
+StackLayers Init (startupMode = 3)
+**********************************************************
+Network config : CENTRALIZED ROUTER
+Channel used: 13.
+Application Version : 1.9
+Zigbee Stack version : R23
+Zigbee Extended Address : 0x0080E1FFFE1AB83C
+Link Key : 5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39
+Clusters allocated are:
+  Basic Client on Endpoint 1.
+  OnOff Client on Endpoint 1.
+  TempMeas Server on Endpoint 2.
+  IasZone Server on Endpoint 3.
+**********************************************************
+BMP180 inicializovan uspesne.
+Startup Wait Callback Status : 0xCA
+Startup failed, attempting again after a short delay (500 ms)
+Association accepted.
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+[ONOFF] SW1 pushed, sending 'TOGGLE'
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+[ONOFF] SW1 pushed, sending 'TOGGLE'
+[ONOFF] SW1 pushed, sending 'TOGGLE'
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: ZAVRENO
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: OTEVRENO
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: ZAVRENO
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: OTEVRENO
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.8 C
+Teplota 2480 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 24.9 C
+Teplota 2490 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.0 C
+Teplota 2500 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.1 C
+Teplota 2510 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.3 C
+Teplota 2530 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+N
+amereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.2 C
+Teplota 2520 ulozena do pameti (ZCL format).
+ZIGBEE Application Init
+StackLayers Init (startupMode = 3)
+**********************************************************
+Network config : CENTRALIZED ROUTER
+Channel used: 13.
+Application Version : 1.9
+Zigbee Stack version : R23
+Zigbee Extended Address : 0x0080E1FFFE1AB83C
+Link Key : 5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39
+Clusters allocated are:
+  Basic Client on Endpoint 1.
+  OnOff Client on Endpoint 1.
+  TempMeas Server on Endpoint 2.
+  IasZone Server on Endpoint 3.
+**********************************************************
+BMP180 inicializovan uspesne.
+Association accepted.
+Namereno z BMP180: 25.3 C
+Teplota 2530 ulozena do pameti (ZCL format).
+Namereno z BMP180: 28.5 C
+Teplota 2850 ulozena do pameti (ZCL format).
+[ONOFF] SW1 pushed, sending 'TOGGLE'
+[IAS ZONE] Stav dveri zapsan: ZAVRENO
+Namereno z BMP180: 28.3 C
+Teplota 2830 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: OTEVRENO
+Namereno z BMP180: 26.9 C
+Teplota 2690 ulozena do pameti (ZCL format).
+Namereno z BMP180: 26.1 C
+Teplota 2610 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: ZAVRENO
+Namereno z BMP180: 25.9 C
+Teplota 2590 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.9 C
+Teplota 2590 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.9 C
+Teplota 2590 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.9 C
+Teplota 2590 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: OTEVRENO
+Namereno z BMP180: 25.9 C
+Teplota 2590 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: ZAVRENO
+Namereno z BMP180: 25.9 C
+Teplota 2590 ulozena do pameti (ZCL format).
+[IAS ZONE] Stav dveri zapsan: OTEVRENO
+Namereno z BMP180: 25.9 C
+Teplota 2590 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.8 C
+Teplota 2580 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.8 C
+Teplota 2580 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.8 C
+Teplota 2580 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.8 C
+Teplota 2580 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.8 C
+Teplota 2580 ulozena do pameti (ZCL format).
+Namereno z BMP180: 25.8 C
+Teplota 2580 ulozena do pameti (ZCL format).
