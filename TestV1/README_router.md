@@ -257,3 +257,97 @@ void APP_BSP_Button1Action(void)
 }
 ```
 
+### 2. Hlavní smyčka a zpracování událostí (`main.c`)
+
+Architektura STM32 WPAN vyžaduje, aby funkce `MX_APPE_Process()` běžela v hlavní smyčce co nejčastěji a nebyla blokována dlouhými prodlevami. Z toho důvodu je veškeré pravidelné měření a obsluha tlačítek postavena na přerušeních (Interrupts) a systému vlajek (Flags).
+
+#### I2C komunikace a senzor BMP180
+Senzor BMP180 používá pro vyčtení dat složitější sekvenci (zápis příkazu, čekání na převod, vyčtení a kompenzace pomocí kalibračních dat z EEPROM). 
+* **Inicializace:** Probíhá před vstupem do nekonečné smyčky zavoláním `BMP180_Init()`, kde se získá a uloží kalibrační matice přes I2C.
+* **Čtení:** Provádí funkce `BMP180_ReadTemperature()`. Ta nejprve odešle povel pro měření (`0x2E`), počká nutných 5 ms a následně hrubá data matematicky zkompenzuje na reálnou teplotu ve formátu `float`.
+
+#### Zpracování přerušení (EXTI)
+Tlačítka nevyčítáme periodicky, ale využíváme EXTI (External Interrupt). Dveřní senzor reaguje na obě hrany signálu (stisk i puštění), abychom odeslali správný stav otevřeno/zavřeno.
+
+```c
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin) {
+    // Tlačítko 1: Odeslání Toggle příkazu
+    if (GPIO_Pin == USER_BUTTON_Pin) {
+    	APP_BSP_Button1Action();
+        HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin);
+    }
+    // Tlačítko 2: Simulace otevření dveří (Rising hrana)
+	if (GPIO_Pin == USER_BUTTON_2_Pin) {
+		APP_ZIGBEE_UpdateDoorState(true);
+		HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
+	}
+}
+
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
+    // Tlačítko 2: Simulace zavření dveří (Falling hrana)
+	if (GPIO_Pin == USER_BUTTON_2_Pin) {
+		APP_ZIGBEE_UpdateDoorState(false);
+		HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
+	}
+}
+```
+
+#### Časovač a signalizace stavu sítě (TIM2)
+Časovač TIM2 je nastaven tak, aby vyvolal přerušení každé 2 vteřiny. V jeho obslužné rutině (`HAL_TIM_PeriodElapsedCallback`) řešíme dvě věci:
+1. **Signalizace párování:** Pokud deska ještě není připojena do Zigbee sítě, bliká modrá LED dioda. Po úspěšném připojení se LED zhasne.
+2. **Plánování měření (Vlajka):** Inkrementuje se lokální čítač `cnt`. Jakmile přesáhne hodnotu 10 (což odpovídá zhruba 20 vteřinám), zvedne se vlajka `send_temp_flag = 1`, která řekne hlavní smyčce, že je čas změřit teplotu. Úmyslně nečteme I2C sběrnici přímo uvnitř přerušení, abychom neblokovali procesor a nenarušili kritické časování rádiového stacku.
+
+```c
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    static volatile uint8_t cnt;
+    // Zkontrolujeme, zda přerušení pochází od TIM2
+    if (htim->Instance == TIM2)
+    {
+        // Ověření připojení k Zigbee síti
+        if (!APP_ZIGBEE_IsAppliJoinNetwork())
+        {
+            // Nejsme v síti -> blikáme modrou LED s periodou 2s (nebo dle nastavení časovače)
+            HAL_GPIO_TogglePin(LED_B_GPIO_Port, LED_B_Pin);
+            cnt = 0;
+        }
+        else
+        {
+            // Jsme v síti -> zhasneme modrou LED
+            HAL_GPIO_WritePin(LED_B_GPIO_Port, LED_B_Pin, GPIO_PIN_RESET);
+
+            // Odpočet pro odeslání teploty
+            if(cnt > 10){
+                send_temp_flag = 1; // Zvednutí vlajky pro hlavní smyčku
+                cnt = 0;
+            }
+            cnt++;
+        }
+    }
+}
+```
+
+#### Hlavní smyčka (`while(1)`)
+Zde dochází k samotnému odbavení vztyčené vlajky od časovače. Jakmile je vlajka `send_temp_flag` aktivní, smyčka ji vynuluje, provede blokující I2C čtení ze senzoru BMP180, vypíše výsledek do terminálu a zavolá aktualizační funkci pro odeslání dat do sítě. Hlavní smyčka se po tomto kroku okamžitě vrací k neustálé obsluze událostí rádiového stacku pomocí volání `MX_APPE_Process()`.
+
+```c
+	while (1) {
+    /* USER CODE END WHILE */
+    MX_APPE_Process();
+
+    /* USER CODE BEGIN 3 */
+
+		if (send_temp_flag == 1) {
+			send_temp_flag = 0;
+
+			// Změříme reálnou teplotu z I2C senzoru
+			float real_temp = BMP180_ReadTemperature();
+
+			// Vypíšeme si ji do konzole pro kontrolu
+			LOG_INFO_APP("Namereno z BMP180: %d.%d C", (int)real_temp, (int)(real_temp * 10) % 10);
+
+			// Odeslání do Zigbee sítě
+			APP_ZIGBEE_UpdateTemperature(real_temp);
+		}
+	}
+```
