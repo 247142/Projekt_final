@@ -147,3 +147,113 @@ Proto je nezbytné nastavit **GPDMA1** následovně:
 
 ![Ukázka logování a Dashboardu v Putty](../readme_files/putty_ser.png)
 
+
+## 💻 Softwarové řešení
+
+Většina aplikační logiky pro Zigbee komunikaci se nachází v souborech vygenerovaných v adresáři `STM32_WPAN/App` a v hlavní smyčce v `main.c`. Níže jsou popsány klíčové funkce a úpravy, které tvoří logiku našeho routeru.
+
+### 1. Zigbee Endpointy (`app_zigbee_endpoint.c`)
+
+#### Identifikace senzoru dveří (IAS Zone Type)
+Ačkoliv CubeMX vygeneroval Endpoint 3 s IAS Zone clusterem, výchozí typ zóny by domácí brány nedokázaly správně rozpoznat (zobrazovalo by se neznámé zařízení). Bylo nutné upravit inicializační funkci `APP_ZIGBEE_ConfigEndpoints`, aby se senzor síti explicitně nahlásil jako dveřní/okenní kontakt.
+```c
+/* USER CODE BEGIN APP_ZIGBEE_ConfigEndpoints2 */
+// Změna ZoneType na Dveřní / Okenní senzor
+ZbZclAttrIntegerWrite(stZigbeeAppInfo.IasZoneServer_3,
+        ZCL_IAS_ZONE_SVR_ATTR_ZONE_TYPE,
+        ZCL_IAS_ZONE_SVR_ZONE_TYPE_DOOR_WINDOW);
+/* USER CODE END APP_ZIGBEE_ConfigEndpoints2 */
+```
+
+#### Odesílání stavu dveří (Automatické notifikace)
+Funkce `APP_ZIGBEE_UpdateDoorState()` obsluhuje logiku otevření/zavření. Využívá atribut `ZoneStatus`, u kterého vyčteme aktuální stav a pouze maskujeme nultý bit (Alarm 1). 
+
+Oproti jiným Zigbee stackům není v ST WPAN nutné manuálně generovat a odesílat ZCL příkaz `Zone Status Change Notification`. Stack v STM32 využívá interní callback. Jakmile dojde k přepisu atributu pomocí `ZbZclAttrIntegerWrite`, stack změnu detekuje a notifikaci do sítě rozešle zcela automaticky na pozadí.
+
+```c
+void APP_ZIGBEE_UpdateDoorState(bool is_open) {
+	uint16_t current_status = 0;
+	enum ZclStatusCodeT attr_status;
+
+	// 1. Přečtení aktuálního stavu (abychom přepsali jen Alarm bit)
+	current_status = (uint16_t)ZbZclAttrIntegerRead(
+	        stZigbeeAppInfo.IasZoneServer_3,
+	        ZCL_IAS_ZONE_SVR_ATTR_ZONE_STATUS,
+	        NULL,
+	        &attr_status);
+
+	// 2. Úprava nultého bitu (Alarm 1)
+	if (is_open) {
+		current_status |= 0x0001;  // Nastavení bitu (otevřeno)
+	} else {
+		current_status &= ~0x0001; // Vymazání bitu (zavřeno)
+	}
+
+	// 3. Zápis nového stavu zpět do paměti
+	enum ZclStatusCodeT write_status = ZbZclAttrIntegerWrite(
+	        stZigbeeAppInfo.IasZoneServer_3,
+	        ZCL_IAS_ZONE_SVR_ATTR_ZONE_STATUS,
+	        current_status);
+
+	if (write_status == ZCL_STATUS_SUCCESS) {
+		LOG_INFO_APP("[IAS ZONE] Stav dveri zapsan: %s",
+				is_open ? "OTEVRENO" : "ZAVRENO");
+	} else {
+		LOG_ERROR_APP("Chyba zapisu IAS Zone atributu: 0x%02X", write_status);
+	}
+}
+```
+
+#### Aktualizace teploty
+Funkce `APP_ZIGBEE_UpdateTemperature()` je volána po úspěšném vyčtení dat z I2C. Zajišťuje konverzi reálné teploty ve formátu `float` (např. 25.43 °C) na Zigbee ZCL formát (celé číslo vynásobené 100, tj. 2543) a následný zápis do clusteru `Temperature Measurement`.
+
+```c
+void APP_ZIGBEE_UpdateTemperature(float temperature_celsius)
+{
+    int16_t zigbee_temp = (int16_t)(temperature_celsius * 100.0f);
+
+    enum ZclStatusCodeT status = ZbZclAttrIntegerWrite(
+        stZigbeeAppInfo.TempMeasServer_2, // Náš Teplotní Server
+        ZCL_TEMP_MEAS_ATTR_MEAS_VAL,
+        zigbee_temp
+    );
+
+    if (status == ZCL_STATUS_SUCCESS) {
+        LOG_INFO_APP("Teplota %d ulozena do pameti (ZCL format).", zigbee_temp);
+    } else {
+        LOG_ERROR_APP("Chyba zapisu teploty: 0x%02X", status);
+    }
+}
+```
+
+#### Odeslání Toggle příkazu
+Stisk hlavního tlačítka (namapovaného na `BSP` vrstvu) vyvolá funkci `APP_BSP_Button1Action()`. Tato funkce nejprve ověří, zda je zařízení úspěšně připojeno do Zigbee sítě. Pokud ano, sestaví adresní strukturu pro Koordinátora (krátká adresa `0x0000`) a odešle standardní ZCL příkaz `Toggle` na Endpoint 1. Tímto způsobem router vzdáleně ovládá stav (On/Off) na cílovém zařízení.
+
+```c
+void APP_BSP_Button1Action(void)
+{
+  struct ZbApsAddrT     stDest;
+  enum ZclStatusCodeT   eStatus;
+
+  // Ověření, zda je aplikace již připojena do sítě
+  if ( APP_ZIGBEE_IsAppliJoinNetwork() != false )
+  {
+    // Příprava cílové adresy (0x0000 = Koordinátor)
+    memset( &stDest, 0, sizeof( stDest) );
+    stDest.endpoint = APP_ZIGBEE_ENDPOINT_1;
+    stDest.mode = ZB_APSDE_ADDRMODE_SHORT;
+    stDest.nwkAddr = 0;
+
+    LOG_INFO_APP( "\r[ONOFF] SW1 pushed, sending 'TOGGLE'" );
+    
+    // Odeslání požadavku Toggle přes OnOff Client cluster
+    eStatus = ZbZclOnOffClientToggleReq( stZigbeeAppInfo.OnOffClient_1, &stDest, NULL, NULL );
+    
+    if ( eStatus != ZCL_STATUS_SUCCESS )
+    {
+      LOG_ERROR_APP( "[ONOFF] Error, OnOff Client Request failed (0x%02X).", eStatus );
+    }
+  }
+}
+```
+
