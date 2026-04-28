@@ -42,8 +42,9 @@ Displej (1.9" EPD) nevyužívá žádný grafický engine. Pracujeme přímo s b
 * **Teplota:** Hodnoty přijaté ze sítě jako `int16` jsou matematicky rozloženy na číslice a mapovány na segmenty.
 * **Symbol Dveří:** Protože displej nemá ikonu pro dveře, použili jsme segmenty číslice `0` na indexu 7 a 8. Vypnutím pravé strany segmentu (`epd_buffer[8] = 0x00`) jsme vytvořili symbol otevřeného křídla `[`, což efektivně indikuje stav senzoru.
 
-*(fotku displeje)*
-![E-Paper Displej v akci](../readme_files/DISPLAY.JPEG)
+*(fotka displeje)*
+
+![E-Paper Displej v akci](../readme_files/DISPLAY.jpeg)
 
 ### 3. Zigbee Endpoints a Reporting
 Koordinátor hostuje na **Endpointu 1** clustery:
