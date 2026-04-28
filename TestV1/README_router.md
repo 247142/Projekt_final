@@ -12,6 +12,7 @@ Tato složka obsahuje firmware pro vývojovou desku **Nucleo-WBA55CG**. Zaříze
 
 ## 🛠️ Stručná konfigurace v STM32CubeMX
 ![CubeMX Pinout - Router](../readme_files/routerpinout.png)
+
 Pro správný běh Zigbee stacku a periférií je projekt v CubeMX nastaven následovně:
 
 ### 1. Základní periferie
