@@ -2,7 +2,7 @@
 *Tento projekt byl vytvořen v rámci předmětu **MPC-SSY**.*
 ## 👥 Autoři
 * **Bc. Oldřich Hána (247113)** – *Kordinátor*
-* **Bc. Matěj Matoušek(247142)** – *Router*
+* **Bc. Matěj Matoušek (247142)** – *Router*
 
 Projekt demonstruje komplexní komunikaci v bezdrátové síti **Zigbee 3.0** mezi dvěma uzly. Zaměřuje se na implementaci zabezpečeného clusteru **IAS Zone** (bezpečnostní dveřní senzor simulovaný tlačítkem), **Temperature Measurement** (měření teploty) a obousměrné ovládání stavu přes **OnOff** cluster (Toggle).
 
