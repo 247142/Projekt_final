@@ -19,13 +19,13 @@ Projekt demonstruje komplexní komunikaci v bezdrátové síti **Zigbee 3.0** me
 
 ## 🏗️ Implementované Clustery
 
-### Koordinátor (Client / Ústředna)
+### Koordinátor 
 * **IAS Zone Client (EP 1):** Spravuje registraci senzorů a přijímá poplachy o otevření/zavření dveří.
 * **Temperature Client (EP 1):** Přijímá reporty o teplotě ze senzoru.
 * **OnOff Server (EP 1):** Umožňuje vzdálené ovládání palubní LED.
 * **UI:** Grafické zobrazení stavu na E-Paper displeji a textový Dashboard přes UART.
 
-### Router (Server / Koncové zařízení)
+### Router 
 * **IAS Zone Server (EP 3):** Detekuje stav tlačítka. 
 * **Temperature Server (EP 2):** Měří teplotu a odesílá ji pomocí konfigurovatelného reportingu.
 * **OnOff Client (EP 1):** Odesílá Toggle příkazy pro ovládání LED na koordinátorovi.
