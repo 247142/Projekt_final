@@ -20,7 +20,7 @@ Základem koordinátoru je vývojová deska **Nucleo-WBA55CG**.
 
 ---
 
-## 🛠️ Softwarové řešení a "Engineering Hacks"
+## 🛠️ Softwarové řešení 
 
 ### 1. Vlastní printf logování (Ušetřené 3 týdny času)
 Jedním z klíčových rozhodnutí v projektu bylo opuštění nativního, velmi komplexního systému *ST Advanced Trace*. Místo něj jsme implementovali vlastní nízkoúrovňový redirect `__io_putchar` přímo na UART.
@@ -59,7 +59,7 @@ while (1) {
 }
 ```
 
-### 3. E-Paper UI a Grafický "Trick"
+### 3. E-Paper UI 
 Displej (1.9" EPD) nevyužívá žádný grafický engine. Pracujeme přímo s buffery segmentů (`epd_custom.c`).
 * **Teplota:** Hodnoty přijaté ze sítě jako `int16` jsou matematicky rozloženy na číslice a rovnou mapovány na segmenty.
 * **Symbol Dveří:** Protože displej nemá dedikovanou ikonu pro dveře, použili jsme grafický trik se segmenty číslice `0` na indexu 7 a 8. Vypnutím pravé strany segmentu (`epd_buffer[8] = 0x00`) jsme vytvořili symbol otevřeného křídla `[`, což efektivně indikuje stav senzoru.
@@ -106,7 +106,7 @@ static enum ZclStatusCodeT APP_ZIGBEE_OnOffServerToggleCallback(...) {
 }
 ```
 
-### 5. IAS Zone Enrollment (Bezpečnostní vazba)
+### 5. IAS Zone Enrollment 
 Tato deska funguje jako **CIE (Control Indicator Equipment)**. Proces navázání zabezpečeného spojení s "magnetem" (tlačítkem) probíhá takto:
 1. Jakmile se v síti objeví nové zařízení, spustí se `APP_ZIGBEE_SetNewDevice`.
 2. Koordinátor zjistí svou IEEE adresu přes `ZbExtendedAddress` a zapíše ji do routeru na **Endpoint 3**.
