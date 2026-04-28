@@ -144,3 +144,6 @@ Proto je nezbytné nastavit **GPDMA1** následovně:
   * **Direction:** `Peripheral To Memory`
   * **Priority:** `Low`
   * **Source Address Increment:** `Disabled`
+
+![Ukázka logování a Dashboardu v Putty](../readme_files/putty_router.png)
+
