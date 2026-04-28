@@ -14,7 +14,8 @@ Základem koordinátoru je vývojová deska **Nucleo-WBA55CG**.
 * **PB11 (LED):** Modrá LED dioda ovládaná vzdáleně z routeru.
 
 *( snímek z CubeMX)*
-![CubeMX Pinout - Koordinátor](readme_files/coordpinout.png)
+
+![CubeMX Pinout - Koordinátor](../readme_files/coordpinout.png)
 
 ---
 
@@ -33,7 +34,8 @@ int __io_putchar(int ch) {
 **Proč?** Ačkoliv toto řešení obchází doporučené postupy výrobce, ušetřilo nám zhruba **3 týdny reverzního inženýrství** a ladění konfiguračních souborů trace frameworku. Díky tomu jsme mohli okamžitě vidět čisté logy ze stacku a vytvořit přehledný **Cluster Dashboard** v Putty.
 
 *screenshot z Putty*
-![Ukázka logování a Dashboardu v Putty](cesta/k/fotce_putty_coord.jpg)
+
+![Ukázka logování a Dashboardu v Putty](../readme_files/putty_coord.png)
 
 ### 2. E-Paper UI a Grafický "Trick"
 Displej (1.9" EPD) nevyužívá žádný grafický engine. Pracujeme přímo s buffery segmentů (`epd_custom.c`).
