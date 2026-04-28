@@ -42,7 +42,7 @@ Projekt demonstruje komplexní komunikaci v bezdrátové síti **Zigbee 3.0** me
 
 ## 🧩 Softwarové řešení (Architektura)
 
-Aplikační logika a konfigurace Zigbee stacku je rozdělena do dvou samostatných částí. Systém využívá událostmi řízenou architekturu (callbacks) a specifický *Enrollment proces* (zápis CIE adresy a schválení požadavku) pro spolehlivou komunikaci IAS senzoru.
+Aplikační logika a konfigurace Zigbee stacku je rozdělena do dvou samostatných částí. 
 
 Pro detailní popis implementace kódu a funkcí přejděte na dokumentaci jednotlivých uzlů:
 
